@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="breToolKit.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    自动
+    <svg  width="100px" height="100px" style="transform: rotateX(180deg);">
+            <polyline id="poly1" points='0,0' fill="#8dd" stroke="black" />
+    </svg>
+    <hr>
+    手动
+    <svg width="100px" height="100px" style="transform: rotateX(180deg);">
+            <polyline id="poly2" points=' 
+              0 0,
+             0  55,
+             9  55,
+             18 55,
+             27 55,
+             36 67,
+             45 55,
+             54 67,
+             63 67,
+             72 67,
+             81 67,
+             90 67,
+             99 100
+             100 0' fill="#8dd" stroke="black" />
+    </svg>
+</body>
+</html>
+
+<script>
+let bre=new breakon()
+
+let data=bre.allowProportion([1,3,9,11,5,3],150)
+ 
+let arrPoints=[]
+data.forEach(( element ,index) => {
+    arrPoints.push(index*20,element)
+});
+document.querySelector('#poly1').setAttribute('points',arrPoints.join(' ')) 
+  
+ 
+// let shiftPoints=Object.entries(getPoints) //获取到x,y
+// 
+// shiftPoints.map
+// shiftPoints
+let {newTofixed}=bre
+console.log(newTofixed(2.55551231235))
+
+function add(a) {
+        function s1(b) {
+            a = a + b
+		    return s1
+        }
+        s1.toString =()=>{
+            return a
+        }
+        return   s1
+    } 
+
+    console.log(breakon.classMethod())
+    let addvalue=add(3)(2)
+    console.log( typeof addvalue)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var s=[55, 55, 55, 55, 67, 55, 67, 67, 67, 67, 67, 100] //峰值
+ 
+// let _s=allowProportion(s,90)
+// _s.forEach(( vtrend,itrend,atrend )=>{  
+//     let insetIndex=2*itrend;//插入位置 
+//     atrend.splice(insetIndex,0,9*itrend) 
+// })
+// _s.unshift(0,0)
+// _s.push(100,0)
+// console.log(_s.join(' '))
+// document.querySelector('#poly').setAttributeNS(null, "points", _s.join(' '));
+// function allowProportion(arr,_allowMax){
+//     let maxValue=Math.max.apply([],arr) //极值
+//     let  _arr =[...arr]//浅拷贝 
+//     let _svgArr=[] //存放压缩后的值
+//     const allowMax=_allowMax //允许的最大值  90
+//     arr.forEach(( vtrend,itrend,atrend )=>{ 
+//         let maxIndex= _arr.indexOf(maxValue)//找到极值位置
+//         if(maxIndex>=0){ _arr.splice(maxIndex,0,allowMax)  }//替换极值
+//         _svgArr.push( (allowMax/maxValue)*vtrend) //计算极值相对的大小
+//     })
+//     return _svgArr
+// }
+
+</script>
