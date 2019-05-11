@@ -13,7 +13,7 @@ class breakon {
         return '(' + this.x + ', ' + this.y + ')';
       }
       static classMethod() {
-        return 'hello';
+        return true;
       } 
       
       /**
@@ -48,7 +48,6 @@ class breakon {
           let m = n||deci
           deci= Math.pow(10, m);//放大倍数 
           return Math.round(floatNum * deci) /deci;//4舍5入 
-          
         } 
       }
       /**
@@ -95,7 +94,21 @@ class breakon {
           default: return 0; break;
         }
       }
-      
+    /**
+     * 查找字符串中重复的次数
+     * 
+     */
+      countStr(str, strSplit) {
+        return str.split(strSplit).length - 1
+      }
+
+      maxArr(arr) {
+        return Math.max.apply(null, arr);
+    }
+    //数组最小值
+      minArr(arr) {
+        return Math.min.apply(null, arr);
+    } 
 
 }
 
