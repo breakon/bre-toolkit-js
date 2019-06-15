@@ -110,6 +110,11 @@ class breakon {
         return Math.min.apply(null, arr);
     } 
 
-}
+    //判断所有类型
+    isType(value){
+     let typeString= Object.prototype.toString.call(value) //[object Array]
+     return  typeString.substring(1,typeString.length-1).split(" ").pop() //Array
+    }
 
+} 
  
